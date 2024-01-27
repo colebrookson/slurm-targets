@@ -17,6 +17,11 @@ This work is licensed under a
 
 ## How-to:
 
+1. Set up the new repository with the basic structure required by the targets package, including the main `_targets.R` file, the data files, etc. Then, initialize the project with `renv`:
+   * use `renv::init()` to look for which packages need to be included, and follow instructions to do so
+   * use `renv::snapshot()` to make the lock file
+2. 
+
 
 
 
