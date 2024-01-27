@@ -1,0 +1,5 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+fit_model|function|982677e5c5b1c4d7
+get_data|function|caaab029510d896a
+plot_model|function|79f0c75b1fb6e6be
+file|stem||ddce627b8550e98c|ef46db3751d8e999|-1629806240||t19749.0142229255s||0|file|local|vector|||0.101|no nonmissing arguments to max returning Inf|could not find packages rstanarm in library paths 
