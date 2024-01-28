@@ -19,11 +19,19 @@ plot_model <- function(model, data) {
 }
 
 big_model <- function(data) {
-  rstanarm::stam_lm(Ozone ~ Temp + Wind + Solar.R + Month + Day,
+  rstanarm::stan_glmer(Ozone ~ Temp + Wind + Solar.R + (1|Month),
     data = data,
     iter = 10000,
     chains = 4,
-    cores = 4
-  ) %>%
-    qs::qsave(here::here("./outputs/big_model.qs"))
+    cores = 4,
+    adapt_delta = 0.999,
+    control = list(max_treedepth = 15)
+  )
+}
+
+big_plot <- function(big_model) {
+  bayesplot::color_scheme_set("purple")
+  p <- bayesplot::mcmc_areas(big_model, pars = c("Temp", "Wind"))
+
+  ggplot2::ggsave(here("./figs/big_plot.png"), p)
 }

@@ -1,5 +1,16 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-fit_model|function|982677e5c5b1c4d7
-get_data|function|caaab029510d896a
-plot_model|function|79f0c75b1fb6e6be
-file|stem||ddce627b8550e98c|ef46db3751d8e999|-1629806240||t19749.0142229255s||0|file|local|vector|||0.101|no nonmissing arguments to max returning Inf|could not find packages rstanarm in library paths 
+.Random.seed|object|600f2834e578bb70|||||||||||||||
+big|stem|7ddfe014c7ae6672|67e9aa01e4eb9023|01c0a1a113b6eb55|-1114752118||t19749.0321863157s|c7deb67f02d543b4|3168989|rds|local|vector|||6.492||
+big_model|function|09a8f5a431b3a6c6|||||||||||||||
+big_plot|function|601d8bcd6646716c|||||||||||||||
+controller_cluster|object|0aa283785ccd5e31|||||||||||||||
+controller_local|object|740caa8d8181e4a3|||||||||||||||
+controller_sge|object|519b2999b5abfe5c|||||||||||||||
+data|stem|e534ebc33fae3e5f|4525b922227c51ac|0dd25d1b0ac3432f|-2078757027||t19749.0263369261s|98949606cf9cbcae|1356|rds|local|vector|||0.064||
+file|stem|18249aa3ba43d359|ddce627b8550e98c|ef46db3751d8e999|-1629806240|/Users/colebrookson/github/slurm-targets/./data/airquality.csv|t19749.0105886407s|b1a5d9836ec7e80d|2890|file|local|vector|||3.072||
+fit_model|function|982677e5c5b1c4d7|||||||||||||||
+get_data|function|caaab029510d896a|||||||||||||||
+model|stem|5f0b159b97908d5b|f3249b4ecf290e96|9c0c94cea72d6ece|1623637644||t19749.0321863686s|c4a62f0a1301ecbc|111|rds|local|vector|||0.001||
+plot|stem|658170d335bd84c6|1239c97928298b18|968b7e0077190db2|-476444806||t19749.0321865522s|233e6a39b4c32579|43844|rds|local|vector|||0.004||
+plot_big|stem|80db3b7d0d1814c0|707115688261fa04|0a418c797c495b5e|-1559927133||t19749.073110275s|ebd1054f3f481e45|110|rds|local|vector|||0.408||
+plot_model|function|79f0c75b1fb6e6be|||||||||||||||
