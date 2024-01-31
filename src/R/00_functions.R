@@ -33,5 +33,5 @@ big_plot <- function(big_model) {
   bayesplot::color_scheme_set("purple")
   p <- bayesplot::mcmc_areas(big_model, pars = c("Temp", "Wind"))
 
-  ggplot2::ggsave(here("./figs/big_plot.png"), p)
+  ggplot2::ggsave(here::here("./figs/big_plot.png"), p)
 }
