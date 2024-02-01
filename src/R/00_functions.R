@@ -24,8 +24,8 @@ big_model <- function(data) {
     iter = 10000,
     chains = 4,
     cores = 4,
-    adapt_delta = 0.999,
-    control = list(max_treedepth = 15)
+    adapt_delta = 0.9999,
+    control = list(max_treedepth = 50)
   )
 }
 

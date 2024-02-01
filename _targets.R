@@ -9,19 +9,33 @@ library(crew.cluster)
 
 source(here("./src/R/00_functions.R"))
 
-controller_local <- crew::crew_controller_slurm(
+controller_local <- crew.cluster::crew_controller_slurm(
   name = "small_slurm",
-  workers = 1,
   seconds_timeout = 60,
   slurm_cpus_per_task = 1,
-  workers = 1
+  workers = 1,
+  slurm_time_minutes = 5,
+  script_lines = c(
+    "#SBATCH --partition=short",
+    "#SBATCH --mem-per-cpu=2G",
+    "#SBATCH --mail-user=cole.brookson@gmail.com",
+    "#SBATCH --mail-type=BEGIN",
+    "#SBATCH --mail-type=END",
+    "#SBATCH --mail-type=FAIL",
+    "#SBATCH --mail-type=REQUEUE",
+    "#SBATCH --nodes=1",
+    "#SBATCH --ntasks-per-node=32",
+    "module load StdEnv/2023 gcc/9.3.0 r/4.3.1",
+    "export R_LIBS=/home/brookson/scratch/.local/R/$EBVERSIONR/"
+  )
 )
-controller_cluster <- crew::crew_controller_slurm(
+controller_cluster <- crew.cluster::crew_controller_slurm(
   name = "bigger_slurm",
   workers = 4,
   seconds_timeout = 60,
   slurm_cpus_per_task = 4,
-  slurm_memory_gigabytes_per_cpu = 20
+  slurm_memory_gigabytes_per_cpu = 20,
+  slurm_time_minutes = 5
 )
 tar_option_set(
   packages = c("readr", "dplyr", "ggplot2", "rstanarm", "qs"),
