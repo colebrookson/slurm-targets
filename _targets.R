@@ -18,6 +18,7 @@ controller_small <- crew.cluster::crew_controller_slurm(
   script_lines = c(
     "#SBATCH --mem-per-cpu=2G",
     "#SBATCH --mail-user=cole.brookson@gmail.com",
+    "#SBATCH --account=def-bat3man",
     "#SBATCH --mail-type=BEGIN",
     "#SBATCH --mail-type=END",
     "#SBATCH --mail-type=FAIL",
@@ -38,6 +39,7 @@ controller_big <- crew.cluster::crew_controller_slurm(
   script_lines = c(
     "#SBATCH --mem-per-cpu=2G",
     "#SBATCH --mail-user=cole.brookson@gmail.com",
+    "#SBATCH --account=def-bat3man",
     "#SBATCH --mail-type=BEGIN",
     "#SBATCH --mail-type=END",
     "#SBATCH --mail-type=FAIL",
