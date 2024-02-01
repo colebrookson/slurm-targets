@@ -15,6 +15,7 @@ controller_small <- crew.cluster::crew_controller_slurm(
   slurm_cpus_per_task = 1,
   workers = 1,
   slurm_time_minutes = 5,
+  seconds_idle = 60,
   script_lines = c(
     "#SBATCH --mem-per-cpu=2G",
     "#SBATCH --mail-user=cole.brookson@gmail.com",
@@ -24,10 +25,12 @@ controller_small <- crew.cluster::crew_controller_slurm(
     "#SBATCH --mail-type=FAIL",
     "#SBATCH --mail-type=REQUEUE",
     "#SBATCH --nodes=1",
-    "#SBATCH --ntasks-per-node=32",
+    "#SBATCH --ntasks-per-node=1",
     "module load StdEnv/2023 gcc/9.3.0 r/4.3.1",
     "export R_LIBS=/home/brookson/scratch/.local/R/$EBVERSIONR/"
-  )
+  ),
+  slurm_log_output = "/home/brookson/scratch",
+  slurm_log_error = "/home/brookson/scratch",
 )
 controller_big <- crew.cluster::crew_controller_slurm(
   name = "bigger_slurm",
@@ -36,6 +39,7 @@ controller_big <- crew.cluster::crew_controller_slurm(
   slurm_cpus_per_task = 4,
   slurm_memory_gigabytes_per_cpu = 20,
   slurm_time_minutes = 5,
+  seconds_idle = 60,
   script_lines = c(
     "#SBATCH --mem-per-cpu=2G",
     "#SBATCH --mail-user=cole.brookson@gmail.com",
@@ -45,7 +49,7 @@ controller_big <- crew.cluster::crew_controller_slurm(
     "#SBATCH --mail-type=FAIL",
     "#SBATCH --mail-type=REQUEUE",
     "#SBATCH --nodes=1",
-    "#SBATCH --ntasks-per-node=32",
+    "#SBATCH --ntasks-per-node=4",
     "module load StdEnv/2023 gcc/9.3.0 r/4.3.1",
     "export R_LIBS=/home/brookson/scratch/.local/R/$EBVERSIONR/"
   )
