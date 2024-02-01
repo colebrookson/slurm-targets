@@ -63,9 +63,9 @@ tar_option_set(
   memory = "transient"
 )
 
-controller$start()
+#controller$start()
 
-controller$push(
+#controller$push(
 
 list(
   tar_target(data, get_data(here::here("./data/airquality.csv"))),
@@ -78,4 +78,4 @@ list(
              )),
   tar_target(plot_big, big_plot(big))
 )
-)
+#)
