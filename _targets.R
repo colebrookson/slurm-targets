@@ -11,7 +11,6 @@ source(here("./src/R/00_functions.R"))
 
 controller_small <- crew.cluster::crew_controller_slurm(
   name = "small_slurm",
-  seconds_timeout = 60,
   slurm_cpus_per_task = 1,
   workers = 1,
   slurm_time_minutes = 10,
@@ -34,7 +33,6 @@ controller_small <- crew.cluster::crew_controller_slurm(
 controller_big <- crew.cluster::crew_controller_slurm(
   name = "bigger_slurm",
   workers = 4,
-  seconds_timeout = 60,
   slurm_cpus_per_task = 4,
   slurm_memory_gigabytes_per_cpu = 20,
   slurm_time_minutes = 10,
