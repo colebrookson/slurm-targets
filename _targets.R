@@ -34,7 +34,6 @@ controller_big <- crew.cluster::crew_controller_slurm(
   name = "bigger_slurm",
   workers = 4,
   slurm_cpus_per_task = 4,
-  slurm_memory_gigabytes_per_cpu = 20,
   slurm_time_minutes = 10,
   seconds_idle = 600,
   script_lines = c(
