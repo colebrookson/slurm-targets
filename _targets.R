@@ -26,8 +26,7 @@ controller_small <- crew.cluster::crew_controller_slurm(
     "#SBATCH --mail-type=REQUEUE",
     "#SBATCH --nodes=1",
     "#SBATCH --ntasks-per-node=1",
-    "module load StdEnv/2023 gcc/9.3.0 r/4.3.1",
-    "export R_LIBS=/home/brookson/scratch/.local/R/$EBVERSIONR/"
+    "module load StdEnv/2023 r/4.3.1"
   ),
   slurm_log_output = "/home/brookson/scratch/output.txt",
   slurm_log_error = "/home/brookson/scratch/error.txt",
@@ -50,8 +49,7 @@ controller_big <- crew.cluster::crew_controller_slurm(
     "#SBATCH --mail-type=REQUEUE",
     "#SBATCH --nodes=1",
     "#SBATCH --ntasks-per-node=4",
-    "module load StdEnv/2023 gcc/9.3.0 r/4.3.1",
-    "export R_LIBS=/home/brookson/scratch/.local/R/$EBVERSIONR/"
+    "module load StdEnv/2023 r/4.3.1"
   ),
   slurm_log_output = "/home/brookson/scratch/",
   slurm_log_error = "/home/brookson/scratch/",
