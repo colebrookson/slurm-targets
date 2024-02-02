@@ -3,12 +3,12 @@ name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iterat
 big|stem|32a7a574945c980e|67e9aa01e4eb9023|cc11eca51db3a9c3|1416232221||t19754.231087963s|4ba88ba541331e17|6810518|rds|local|vector|||38.868||
 big_model|function|16aa663965b3f33b|||||||||||||||
 big_plot|function|98fe70361c247d22|||||||||||||||
-controller|object|25026d66ff7878f9|||||||||||||||
-controller_big|object|f0e8ff2122033444|||||||||||||||
+controller|object|23e06cc8d9487d63|||||||||||||||
+controller_big|object|50aea19bae62a370|||||||||||||||
 controller_cluster|object|1c192a05973968da|||||||||||||||
 controller_local|object|5f1536b3ee932edd|||||||||||||||
 controller_sge|object|519b2999b5abfe5c|||||||||||||||
-controller_small|object|5685ffe87904a79d|||||||||||||||
+controller_small|object|63f03a044f093416|||||||||||||||
 file|stem|18249aa3ba43d359|ddce627b8550e98c|ef46db3751d8e999|-1629806240|/Users/colebrookson/github/slurm-targets/./data/airquality.csv|t19749.0105886407s|b1a5d9836ec7e80d|2890|file|local|vector|||3.072||
 fit_model|function|982677e5c5b1c4d7|||||||||||||||
 get_data|function|caaab029510d896a|||||||||||||||
