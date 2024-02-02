@@ -29,8 +29,8 @@ controller_small <- crew.cluster::crew_controller_slurm(
     "module load StdEnv/2023 gcc/9.3.0 r/4.3.1",
     "export R_LIBS=/home/brookson/scratch/.local/R/$EBVERSIONR/"
   ),
-  slurm_log_output = "/home/brookson/scratch",
-  slurm_log_error = "/home/brookson/scratch",
+  slurm_log_output = "/home/brookson/scratch/output.txt",
+  slurm_log_error = "/home/brookson/scratch/error.txt",
 )
 controller_big <- crew.cluster::crew_controller_slurm(
   name = "bigger_slurm",
@@ -52,7 +52,9 @@ controller_big <- crew.cluster::crew_controller_slurm(
     "#SBATCH --ntasks-per-node=4",
     "module load StdEnv/2023 gcc/9.3.0 r/4.3.1",
     "export R_LIBS=/home/brookson/scratch/.local/R/$EBVERSIONR/"
-  )
+  ),
+  slurm_log_output = "/home/brookson/scratch/",
+  slurm_log_error = "/home/brookson/scratch/",
 )
 controller <- crew::crew_controller_group(controller_small,
                                            controller_big) 
