@@ -13,9 +13,10 @@ fit_model <- function(data) {
 }
 
 plot_model <- function(model, data) {
-  ggplot(data) +
+  p <- ggplot(data) +
     geom_point(aes(x = Temp, y = Ozone)) +
     geom_abline(intercept = model[1], slope = model[2])
+  ggplot2::ggsave(here::here("./figs/plot.png"), p)
 }
 
 big_model <- function(data) {
