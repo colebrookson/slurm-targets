@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.3.2",
+    "Version": "4.3.1",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -417,16 +417,18 @@
       "RemoteUsername": "wlandau",
       "RemoteRepo": "crew",
       "RemoteRef": "main",
-      "RemoteSha": "5040de924bda8a4de7d8d446878838befafc8e64",
+      "RemoteSha": "3f1d70c6e9492995289cc073830b305fbee333a1",
       "Requirements": [
         "R",
         "R6",
         "cli",
         "data.table",
         "getip",
+        "later",
         "mirai",
         "nanonext",
         "processx",
+        "promises",
         "ps",
         "rlang",
         "stats",
@@ -435,7 +437,7 @@
         "tools",
         "utils"
       ],
-      "Hash": "fb54f743688c0da34ab780568d113b59"
+      "Hash": "34a4c2f19f51abfcc4160efb7001a26c"
     },
     "crew.cluster": {
       "Package": "crew.cluster",
@@ -1371,7 +1373,7 @@
     },
     "readr": {
       "Package": "readr",
-      "Version": "2.1.4",
+      "Version": "2.1.5",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -1390,7 +1392,7 @@
         "utils",
         "vroom"
       ],
-      "Hash": "b5047343b3825f37ad9d3b5d89aa1078"
+      "Hash": "9de96463d2117f6ac49980577939dfb3"
     },
     "rematch2": {
       "Package": "rematch2",
