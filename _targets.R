@@ -37,7 +37,7 @@ controller_big <- crew.cluster::crew_controller_slurm(
   slurm_time_minutes = 10,
   seconds_idle = 600,
   script_lines = c(
-    "#SBATCH --mem-per-cpu=2G",
+    "#SBATCH --mem-per-cpu=6G",
     "#SBATCH --mail-user=cole.brookson@gmail.com",
     "#SBATCH --account=def-bat3man",
     "#SBATCH --mail-type=BEGIN",
@@ -61,7 +61,9 @@ tar_option_set(
     crew = tar_resources_crew(controller = "small_slurm")
   ),
   garbage_collection = TRUE,
-  memory = "transient"
+  memory = "transient",
+  storage = "worker",
+  retrieval = "worker"
 )
 
 list(
