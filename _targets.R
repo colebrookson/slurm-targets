@@ -48,8 +48,8 @@ controller_small <- crew.cluster::crew_controller_slurm(
 #   slurm_log_output = "/home/brookson/scratch/big-output.txt",
 #   slurm_log_error = "/home/brookson/scratch/big-error.txt",
 # )
-controller <- crew::crew_controller_group(controller_small,
-                                           controller_big) 
+# controller <- crew::crew_controller_group(controller_small,
+#                                            controller_big) 
 tar_option_set(
   packages = c("readr", "dplyr", "ggplot2", "rstanarm", "qs"),
   controller = controller_small,
