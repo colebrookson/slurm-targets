@@ -11,19 +11,17 @@ source(here("./src/R/00_functions.R"))
 
 controller_small <- crew.cluster::crew_controller_slurm(
   name = "small_slurm",
-  workers = 1,
-  slurm_time_minutes = 10,
+  slurm_time_minutes = 5,
   seconds_idle = 600,
   script_lines = c(
-    "#SBATCH --mem-per-cpu=3G",
+    "#SBATCH --mem-per-cpu=5G",
     "#SBATCH --mail-user=cole.brookson@gmail.com",
     "#SBATCH --account=def-bat3man",
     "#SBATCH --mail-type=BEGIN",
     "#SBATCH --mail-type=END",
     "#SBATCH --mail-type=FAIL",
     "#SBATCH --mail-type=REQUEUE",
-    "#SBATCH --nodes=1",
-    "#SBATCH --ntasks-per-node=1",
+    "#SBATCH --cpus-per-task=1",
     "module load StdEnv/2023 r/4.3.1"
   ),
   slurm_log_output = "/home/brookson/scratch/output.txt",
