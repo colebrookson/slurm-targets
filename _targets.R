@@ -13,7 +13,7 @@ controller_small <- crew.cluster::crew_controller_slurm(
   name = "small_slurm",
   slurm_time_minutes = 5,
   seconds_idle = 600,
-  tasks_max = 10,
+  tasks_max = 1,
   script_lines = c(
     "#SBATCH --mem-per-cpu=8G",
     "#SBATCH --mail-user=cole.brookson@gmail.com",
