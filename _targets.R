@@ -27,7 +27,7 @@ controller_small <- crew.cluster::crew_controller_slurm(
   ),
   slurm_log_output = "/home/brookson/scratch/output.txt",
   slurm_log_error = "/home/brookson/scratch/error.txt",
-  script_directory = "/home/brookson/scratch/script.txt"
+  script_directory = "/home/brookson/scratch/script/"
 )
 # controller_big <- crew.cluster::crew_controller_slurm(
 #   name = "bigger_slurm",
