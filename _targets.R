@@ -13,6 +13,7 @@ controller_small <- crew.cluster::crew_controller_slurm(
   name = "small_slurm",
   slurm_time_minutes = 5,
   seconds_idle = 600,
+  tasks_max = 10,
   script_lines = c(
     "#SBATCH --mem-per-cpu=8G",
     "#SBATCH --mail-user=cole.brookson@gmail.com",
@@ -26,6 +27,7 @@ controller_small <- crew.cluster::crew_controller_slurm(
   ),
   slurm_log_output = "/home/brookson/scratch/output.txt",
   slurm_log_error = "/home/brookson/scratch/error.txt",
+  script_directory = "/home/brookson/scratch/script.txt"
 )
 # controller_big <- crew.cluster::crew_controller_slurm(
 #   name = "bigger_slurm",
