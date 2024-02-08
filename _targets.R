@@ -7,13 +7,14 @@ library(here)
 library(crew)
 library(crew.cluster)
 
-source(here("./src/R/00_functions.R"))
+#source(here("./src/R/00_functions.R"))
 
 controller_small <- crew.cluster::crew_controller_slurm(
   name = "small_slurm",
   slurm_time_minutes = 5,
-  seconds_idle = 600,
-  tasks_max = 1,
+  seconds_idle = 10,
+  tasks_max = Inf,
+  verbose = TRUE,
   script_lines = c(
     "#SBATCH --mem-per-cpu=8G",
     "#SBATCH --mail-user=cole.brookson@gmail.com",
@@ -64,10 +65,15 @@ tar_option_set(
   retrieval = "worker"
 )
 
+get_data <- function(file) {
+  read_csv(file, col_types = cols()) %>%
+    filter(!is.na(Ozone))
+}
+
 list(
-  tar_target(data, get_data(here::here("./data/airquality.csv"))),
-  tar_target(model, fit_model(data)),
-  tar_target(plot, plot_model(model, data))
+  tar_target(data, get_data(here::here("./data/airquality.csv")))
+  #tar_target(model, fit_model(data)),
+  #tar_target(plot, plot_model(model, data))
   # tar_target(big, big_model(data)
   # #,
   #           #  resources = tar_resources(
